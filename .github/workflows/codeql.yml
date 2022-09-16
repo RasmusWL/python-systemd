@@ -46,8 +46,8 @@ jobs:
 
           python3 -m pip install --user --upgrade pip setuptools wheel
           python3 -m pip install --user 'virtualenv<20.11'
-          python3 -m pip install --user 'poetry>=1.1,<1.2'
-          python3 -m pip install --user pipenv
+          # python3 -m pip install --user 'poetry>=1.1,<1.2'
+          # python3 -m pip install --user pipenv
 
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug
           ls /home/runner/work/python-systemd/wat-debug
