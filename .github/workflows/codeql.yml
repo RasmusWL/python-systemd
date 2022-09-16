@@ -38,6 +38,7 @@ jobs:
       - name: debug
         run: |
           python3 --version
+          python3 -m pip install --user 'virtualenv<20.11'
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug
           ls /home/runner/work/python-systemd/wat-debug
           ls /home/runner/work/python-systemd/wat-debug/bin
