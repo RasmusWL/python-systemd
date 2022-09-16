@@ -36,16 +36,20 @@ jobs:
         run: |
           python3 --version
 
-          # python3 -m pip install --user --upgrade pip setuptools wheel
-          python3 -m pip install --user --upgrade pip wheel
-          python3 -m pip install --user 'virtualenv<20.11'
+          python3 -m pip install --user --upgrade pip setuptools wheel
+          python3 -m pip install --user virtualenv
+
+          # old virtualenv gets unhappy on new setuptools (65.3.0)
+          # but removing the install makes things work. Actually not unhappy, but the `bin` dir is just not there :O
+          #
+          # python3 -m pip install --user --upgrade pip wheel
+          # python3 -m pip install --user 'virtualenv<20.11'
+
           # python3 -m pip install --user 'poetry>=1.1,<1.2'
           # python3 -m pip install --user pipenv
 
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug
           ls /home/runner/work/python-systemd/wat-debug
-          ls -R /home/runner/work/python-systemd/wat-debug/lib
-          cat /home/runner/work/python-systemd/wat-debug/pyvenv.cfg
 
           cd /home/runner/
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug2
