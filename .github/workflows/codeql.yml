@@ -7,10 +7,10 @@ name: "CodeQL"
 on:
   push:
     branches:
-      - main
+      - rasmuswl
   pull_request:
     branches:
-      - main
+      - rasmuswl
 
 permissions:
   contents: read
