@@ -35,6 +35,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: debug
+        run: |
+          python3 --version
+          python3 -m virtualenv /home/runner/work/python-systemd/wat-debug
+          ls /home/runner/work/python-systemd/wat-debug
+          ls /home/runner/work/python-systemd/wat-debug/bin
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
