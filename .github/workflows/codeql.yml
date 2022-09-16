@@ -57,17 +57,5 @@ jobs:
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug2
 
           ls /home/runner/work/python-systemd/wat-debug2/
-          exit 1
+          /home/runner/work/python-systemd/wat-debug2/bin/pip --version
         shell: bash -e -x {0}
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
-          queries: +security-extended,security-and-quality
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
