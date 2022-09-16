@@ -36,10 +36,10 @@ jobs:
         run: |
           python3 --version
 
-          python3 -m pip install --user --upgrade pip setuptools wheel
+          python3 -m pip install --user --upgrade pip 'setuptools<60.0.0' wheel
           python3 -m pip install --user virtualenv
 
-          # old virtualenv gets unhappy on new setuptools (65.3.0)
+          # old AND new virtualenv gets unhappy on new setuptools (65.3.0)
           # but removing the install makes things work. Actually not unhappy, but the `bin` dir is just not there :O
           #
           # python3 -m pip install --user --upgrade pip wheel
