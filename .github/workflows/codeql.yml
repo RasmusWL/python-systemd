@@ -51,8 +51,12 @@ jobs:
 
           python3 -m virtualenv /home/runner/work/python-systemd/wat-debug
           ls /home/runner/work/python-systemd/wat-debug
-          ls /home/runner/work/python-systemd/wat-debug/bin
-          /home/runner/work/python-systemd/wat-debug/bin/pip install -e .
+
+          cd /home/runner/
+          python3 -m virtualenv /home/runner/work/python-systemd/wat-debug2
+
+          ls /home/runner/work/python-systemd/wat-debug2/
+          exit 1
         shell: bash -e -x {0}
 
       - name: Initialize CodeQL
