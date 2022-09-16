@@ -44,7 +44,8 @@ jobs:
         run: |
           python3 --version
 
-          python3 -m pip install --user --upgrade pip setuptools wheel
+          # python3 -m pip install --user --upgrade pip setuptools wheel
+          python3 -m pip install --user --upgrade pip wheel
           python3 -m pip install --user 'virtualenv<20.11'
           # python3 -m pip install --user 'poetry>=1.1,<1.2'
           # python3 -m pip install --user pipenv
