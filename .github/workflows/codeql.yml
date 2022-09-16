@@ -35,6 +35,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          sudo apt -y update
+          sudo apt -y install gcc libsystemd-dev
+
       - name: debug
         run: |
           set -x
@@ -50,11 +55,6 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           queries: +security-extended,security-and-quality
-
-      - name: Install dependencies
-        run: |
-          sudo apt -y update
-          sudo apt -y install gcc libsystemd-dev
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2
